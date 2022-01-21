@@ -55,7 +55,7 @@ pipeline {
       }
     }
 
-    stage('apply') {
+    stage('plan') {
       steps {
         sh 'echo "apply"'
       }
