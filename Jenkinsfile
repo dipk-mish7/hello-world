@@ -38,5 +38,28 @@ pipeline {
       }
     }
 
+    stage('test') {
+      parallel {
+        stage('test') {
+          steps {
+            sh 'echo "test"'
+          }
+        }
+
+        stage('compliance') {
+          steps {
+            sh 'echo "terraform"'
+          }
+        }
+
+      }
+    }
+
+    stage('apply') {
+      steps {
+        sh 'echo "apply"'
+      }
+    }
+
   }
 }
